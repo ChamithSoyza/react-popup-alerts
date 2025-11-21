@@ -34,6 +34,14 @@
   color: red !important;
 }
 
+.rpa-text-info {
+  color: rgb(0, 183, 255) !important;
+}
+
+.rpa-text-success {
+  color: rgb(4, 206, 4) !important;
+}
+
 .rpa-text-ask {
   color: #3c09ff !important;
 }  
