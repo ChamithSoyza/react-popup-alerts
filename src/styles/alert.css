@@ -1,0 +1,39 @@
+/* React Popup Alerts Styles */
+.rpa-alert-modal .modal-content {
+  border: none;
+  border-radius: 5px !important;
+  width: 500px;
+  height: 369px;
+}
+
+.rpa-alert-modal .modal-body h3 {
+  color: #595959;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.rpa-alert-modal .modal-body span {
+  font-size: 18px;
+}
+
+.rpa-alert-modal .modal-footer button {
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 5px;
+  padding: 10px 32px;
+}
+
+.rpa-text-error {
+  color: red !important;
+}
+
+.rpa-text-cancel {
+  color: red !important;
+}
+
+.rpa-text-ask {
+  color: #3c09ff !important;
+}  
