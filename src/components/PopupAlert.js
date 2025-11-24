@@ -9,7 +9,7 @@ import {
 } from "react-icons/ci";
 
 const PopupAlert = ({
-    varient = 'info',
+    variant = 'info',
     message = '',
     isConfirm = false,
     onConfirm = null,
@@ -34,10 +34,10 @@ const PopupAlert = ({
         onClose();
     }
 
-    const title = varient ? varient.toUpperCase() : 'Alert';
+    const title = variant ? variant.toUpperCase() : 'Alert';
 
     const getIcon = () => {
-        switch (varient) {
+        switch (variant) {
             case 'info':
                 return <CiCircleInfo />;
             case 'success':
@@ -48,7 +48,7 @@ const PopupAlert = ({
                 return <CiCircleRemove />;
             case 'cancel':
                 return <CiCircleRemove />;
-            case 'ask':
+            case 'confirm':
                 return <CiCircleQuestion />;
             default:
                 return null;
@@ -67,7 +67,7 @@ const PopupAlert = ({
         >
             <Modal.Header className='d-flex justify-content-center align-items-center align-content-center border-0 mt-3'>
                 <Modal.Title
-                    className={`rpa-text-${varient}`}
+                    className={`rpa-text-${variant}`}
                     style={{ fontSize: "88px" }}
                 >
                     {getIcon()}
@@ -80,19 +80,17 @@ const PopupAlert = ({
             <Modal.Footer className='d-flex justify-content-center border-0'>
                 {isConfirm ? (
                     <>
-                        <Button size='md' varient="primary" onClick={handleConfirm}>
+                        <Button size='md' variant="primary" onClick={handleConfirm}>
                             Yes
                         </Button>
-                        <Button varient="secondary" onClick={handleCancel}>
+                        <Button variant="secondary" onClick={handleCancel}>
                             Cancel
                         </Button>
                     </>
                 ) : (
-                    <>
-                        <Button varient="secondary" onClick={onClose}>
-                            OK
-                        </Button>
-                    </>
+                    <Button variant="primary" onClick={onClose}>
+                        OK
+                    </Button>
                 )}
             </Modal.Footer>
         </Modal>

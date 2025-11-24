@@ -1,4 +1,5 @@
 /* React Popup Alerts Styles */
+
 .rpa-alert-modal .modal-content {
   border: none;
   border-radius: 5px !important;
@@ -26,6 +27,7 @@
   padding: 10px 32px;
 }
 
+/* Alert variant text - icon color */
 .rpa-text-error {
   color: red !important;
 }
@@ -35,17 +37,38 @@
 }
 
 .rpa-text-info {
-  color:  #27BEF5 !important;
+  color: #27BEF5 !important;
 }
 
 .rpa-text-success {
-  color:  #06D617 !important;
+  color: #06D617 !important;
 }
 
 .rpa-text-warning {
-  color:  #F5DA27 !important;
+  color: #F5DA27 !important;
 }
 
-.rpa-text-ask {
+.rpa-text-confirm {
   color: #3c09ff !important;
-}  
+}
+
+/* Responsive adjustment */
+@media(max-width: 576px) {
+  .rpa-alert-modal .modal-content {
+    width: 90vw;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .rpa-alert-modal .modal-title {
+    font-size: 64px !important;
+  }
+
+  .rpa-alert-modal .modal-body h3 {
+    font-size: 24px;
+  }
+
+  .rpa-alert-modal .modal-body span {
+    font-size: 16px;
+  }
+}

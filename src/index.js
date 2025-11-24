@@ -1,38 +1,22 @@
-import React, { useState, createContext } from 'react';
-import AlertContext from './context/AlertContext';
-import PopupAlert from './components/PopupAlert';;
-import { useAlert } from './hooks/useAlerts';
-import './styles/alert.css';
+/**
+ * React Popup Alerts
+ * A flexible and customizable alert/notification system for React applications
+ * 
+ * @auther Chamith Soyza
+ * @license MIT
+ */
 
-export const AlertProvider = ({ children }) => {
-    const [alerts, setAlerts] = useState([]);
+// Exports the AlertProvider component
+export { default as AlertProvider } from './AlertProvider';
 
-    const showAlert = (
-        varient,
-        message,
-        isConfirm = false,
-        onConfirm = null,
-        onCancel = null
-    ) => {
-        setAlerts(prevAlerts => [
-            ...prevAlerts,
-            { varient, message, isConfirm, onConfirm, onCancel }
-        ]);
-    };
+// Export the useAlert hook for hook-based usage
+export { useAlert } from './hooks/useAlerts';
 
-    const hideAlert = () => {
-        setAlerts(prevAlerts => prevAlerts.slice(1));
-    };
+// Export AlertManager for imperative usage
+export { default as alert } from './AlertManager';
 
-    return (
-        <AlertContext.Provider value={{ showAlert, hideAlert }}>
-            {children}
-            {alerts.length > 0 && (
-                <PopupAlert {...alerts[0]} onClose={hideAlert} />
-            )}
-        </AlertContext.Provider>
-    );
-};
+// Export PopupAlert component (optional, for advanced usage)
+export { default as PopupAlert } from './components/PopupAlert';
 
-export { useAlert };
-export default AlertProvider;
+// Default export
+export { default } from './AlertProvider';
