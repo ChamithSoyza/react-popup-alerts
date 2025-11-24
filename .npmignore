@@ -1,6 +1,13 @@
 src/
-.babelrc
-rollup.config.js
-.gitignore
 node_modules/
+.git/
+.gitignore
 *.log
+.DS_Store
+rollup.config.js
+babel.config.js
+.idea/
+.vscode/
+examples/
+tests/
+*.test.js

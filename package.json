@@ -1,7 +1,7 @@
 {
   "name": "react-popup-alerts",
   "version": "1.0.0",
-  "description": "A flexible and customizable alert system for React applicaitons using Context API",
+  "description": "A flexible and customizable alert system for React applications using Context API",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -20,18 +20,28 @@
     "alert",
     "popup",
     "notification",
-    "context",
+    "dialog",
     "modal",
-    "toast"
+    "confirm",
+    "context",
+    "hooks",
+    "react-bootstrap",
+    "imperative",
+    "fluent-api",
+    "toast",
+    "sweetalert",
+    "promise"
   ],
-  "author": "Chamith Soyza",
+  "author": "Chamith Soyza <cmsoyza@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/ChamithSoyza/react-popup-alerts.git"
   },
-  "bugs": {},
-  "homepage": "",
+  "bugs": {
+    "url": "https://github.com/ChamithSoyza/react-popup-alerts/issues"
+  },
+  "homepage": "https://github.com/ChamithSoyza/react-popup-alerts#readme",
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
