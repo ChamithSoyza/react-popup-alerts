@@ -10,7 +10,7 @@ A flexible and customizable popup alert system for React applications built with
 
 ## Features
 
-- ✨ Multiple alert variants (info, success, warning, error, cancel, ask)
+- ✨ Multiple alert variants (info, success, warning, error, cancel, confirm)
 - 🎣 Two usage patterns: Hook-based and Imperative
 - 🔄 Alert queuing system
 - 💬 Confirmation dialogs with callbacks
@@ -65,7 +65,7 @@ function MyComponent() {
     alert.error('Something went wrong!');
     
     // Confirmation dialog
-    alert.ask(
+    alert.confirm(
       'Are you sure you want to delete this item?',
       () => {
         // User clicked Yes
@@ -89,7 +89,7 @@ Use async/await with confirmation dialogs:
 import { alert } from 'react-popup-alerts';
 
 async function deleteUser() {
-  const confirmed = await alert.confirm('Delete this user?');
+  const confirmed = await alert.confirmPromise('Delete this user?');
   
   if (confirmed) {
     // User clicked Yes
@@ -116,14 +116,14 @@ function MyComponent() {
     showAlert.success('Success message');
     
     // With confirmation
-    showAlert.ask(
+    showAlert.confirm(
       'Are you sure?',
       () => console.log('Confirmed'),
       () => console.log('Cancelled')
     );
     
     // Promise-based
-    const result = await showAlert.confirm('Proceed with this action?');
+    const result = await showAlert.confirmPromise('Proceed with this action?');
   };
 
   return <button onClick={handleClick}>Show Alert</button>;
@@ -139,8 +139,8 @@ function MyComponent() {
 - `alert.warning(message, isConfirm?, onConfirm?, onCancel?)`
 - `alert.error(message, isConfirm?, onConfirm?, onCancel?)`
 - `alert.cancel(message, isConfirm?, onConfirm?, onCancel?)`
-- `alert.ask(message, onConfirm?, onCancel?)`
-- `alert.confirm(message, variant?)` - Returns a Promise<boolean>
+- `alert.confirm(message, onConfirm?, onCancel?)`
+- `alert.confirmPromise(message, variant?)` - Returns a Promise<boolean>
 
 ### Parameters
 
@@ -197,7 +197,7 @@ function handleSubmit(e) {
 ### 3. Delete Confirmation
 ```jsx
 async function handleDelete(id) {
-  const confirmed = await alert.confirm(
+  const confirmed = await alert.confirmPromise(
     'Are you sure you want to delete this item? This action cannot be undone.',
     'warning'
   );
